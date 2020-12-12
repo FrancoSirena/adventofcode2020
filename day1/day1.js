@@ -1,8 +1,9 @@
 'use strict'
 const fs = require('fs')
+const path = require('path')
 
-const input = fs.readFileSync('./day1.input').toString()
-// const input = fs.readFileSync('./day1-sample.input').toString()
+const input = fs.readFileSync(path.join(__dirname, 'day1.input')).toString()
+// const input = fs.readFileSync(path.join(__dirname, 'day1-sample.input')).toString()
 
 const arr = new Set(input.split('\n'))
 let upper = []
@@ -45,41 +46,30 @@ for (const valUpper of upper) {
 }
 
 console.log('1 $ ', found)
-found = undefined
 
-const full = [...under, ...upper]
 
 // part 2                         
-let sum
+const full = [...under, ...upper]
+
 let result
 found = undefined
 
 for (const [index, valUnder] of full.entries()) {
-  sum = valUnder
-  result = valUnder
   for (const valUnderInner of full.slice(index + 1)) {
-    sum += valUnderInner
-    result *= valUnderInner
     for (const valUnderDeep of full.slice(index + 2)) {
-      sum += valUnderDeep
-      if (sum < 2020) {
-        sum -= valUnderDeep
+      const temp = valUnder + valUnderInner + valUnderDeep
+      if (temp < 2020) {
         continue
-      } else if (sum > 2020) {
-        sum -= valUnderDeep
+      } else if (temp > 2020) {
         break
       }
-      result *= valUnderDeep
+      result = valUnderDeep
       found = true
-      console.log(valUnder, valUnderInner, valUnderDeep)
       break
     }
     if (found) {
+      result *= valUnderInner * valUnder
       break
-    }
-    if (!found) {
-      sum -= valUnderInner
-      result = result / valUnderInner
     }
   }
   if (found) {
