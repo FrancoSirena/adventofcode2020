@@ -5,3 +5,6 @@
 
 ## --- Day 2: Password Philosophy ---
 \day-2
+
+## --- Day 3: Toboggan Trajectory ---
+\day-3
