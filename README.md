@@ -16,15 +16,18 @@ They all output the results in a similar fashion:
   2 $ <result>
 ```
 ## --- Day 1: Report Repair ---
-\day1
+/day1
 
 ## --- Day 2: Password Philosophy ---
-\day2
+/day2
 
 ## --- Day 3: Toboggan Trajectory ---
-\day3
+/day3
 
 ## --- Day 4: Passport Processing ---
-\day4
+/day4
+
+## --- Day 5: Binary Boarding ---
+/day5
 
 :)
