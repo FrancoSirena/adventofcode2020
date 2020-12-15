@@ -29,5 +29,7 @@ They all output the results in a similar fashion:
 
 ## --- Day 5: Binary Boarding ---
 /day5
+## --- Day 6: Custom Customs ---
+/day6
 
 :)
