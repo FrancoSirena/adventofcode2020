@@ -31,5 +31,6 @@ They all output the results in a similar fashion:
 /day5
 ## --- Day 6: Custom Customs ---
 /day6
-
+## --- Day 7: Handy Haversacks ---
+/day7
 :)
