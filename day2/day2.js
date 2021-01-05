@@ -33,9 +33,7 @@ for (let row of arr) {
   const passW = rest.join('').trim().split('')
   const [times, letter] = policy.split(' ')
   const [posA, posB] = times.split('-').map(Number).map(v => v -1)
-  const both = passW[posA] === letter && passW[posB] === letter
-  const none = passW[posA] !== letter && passW[posB] !== letter
-  if (!both && !none) {
+  if (passW[posA] === letter ^ passW[posB] === letter) {
     valid++
   }
 }

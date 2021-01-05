@@ -33,4 +33,7 @@ They all output the results in a similar fashion:
 /day6
 ## --- Day 7: Handy Haversacks ---
 /day7
+
+## --- Day 8: Handheld Halting ---
+/day8
 :)
