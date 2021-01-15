@@ -12,19 +12,15 @@ const arr = input.split("\n");
 let preambleSize = 25
 let from = 25
 let result
-let nArr = Array.from(arr, (v, i) => ({
-  v: Number(v), used: false, i
-}))
+let nArr = Array.from(arr, Number)
 
-function hasMatch(preamble, pos, look) {
-  const searchingArr = preamble.slice(0, pos).slice(-preambleSize);
+function hasMatch(pos, look) {
+  const searchingArr = nArr.slice(0, pos).slice(-preambleSize);
   let match = false
   let i = 0
   while (i < preambleSize && i < searchingArr.length) {
-    const found = searchingArr.findIndex(({v}) => v === look - searchingArr[i].v)
+    const found = searchingArr.findIndex(v => v === look - searchingArr[i])
     if (found > -1 && found != i) {
-      nArr[searchingArr[found].i].used = true;
-      nArr[searchingArr[i].i].used = true;
       match = true
       break;
     }
@@ -35,8 +31,8 @@ function hasMatch(preamble, pos, look) {
 }
 
 while (true && from < arr.length) {
-  result = nArr[from].v
-  const matched = hasMatch(nArr, from, result)
+  result = nArr[from]
+  const matched = hasMatch(from, result)
 
   if (!matched) {
     break
